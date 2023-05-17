@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.circle {
+  width: 600px;
+  height: 600px;
+  background-color: blue;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.circle::before,
+.circle::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.circle::before {
+  width: 250px;
+  height: 250px;
+  top: 30%;
+  left: 10%;
+}
+
+.circle::after {
+  width: 250px;
+  height: 250px;
+  top: 30%;
+  right: 10%;
+}
+
+.circle::before,
+.circle::after {
+  transform: translateX(-50%);
+}
+
+.circle::before {
+  transform: translateY(-50%) translateX(-50%) rotate(45deg);
+}
+
+.circle::after {
+  transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+}
