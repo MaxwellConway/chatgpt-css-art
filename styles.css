@@ -8,51 +8,30 @@
 .sonic {
   width: 300px;
   height: 300px;
-  background-color: blue;
-  border-radius: 50%;
   position: relative;
+  background-color: #005cbf;
+  border-radius: 50%;
   overflow: hidden;
 }
 
-.sonic::before {
-  content: "";
-  position: absolute;
-  top: 30%;
-  left: 15%;
-  width: 70%;
-  height: 40%;
-  background-color: white;
-  border-radius: 50%;
-}
-
-.sonic::after {
-  content: "";
-  position: absolute;
-  top: 55%;
-  left: 5%;
-  width: 90%;
-  height: 40%;
-  background-color: white;
-  border-radius: 50%;
-}
-
-.face {
-  position: absolute;
-  top: 30%;
-  left: 30%;
-  width: 40%;
-  height: 40%;
-  background-color: white;
-  border-radius: 50%;
+.head {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  border-bottom-left-radius: 50% 60px;
+  border-bottom-right-radius: 50% 60px;
+  background-color: #005cbf;
+  overflow: hidden;
 }
 
 .eye {
   position: absolute;
-  top: 40%;
-  width: 15%;
-  height: 30%;
-  background-color: black;
+  top: 20%;
+  width: 40px;
+  height: 60px;
+  background-color: white;
   border-radius: 50%;
+  z-index: 1;
 }
 
 .eye.left {
@@ -63,36 +42,73 @@
   right: 20%;
 }
 
-.nose {
+.eye::before {
+  content: "";
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
-  width: 10%;
-  height: 10%;
+  width: 20px;
+  height: 20px;
   background-color: black;
   border-radius: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 
 .mouth {
   position: absolute;
-  top: 65%;
+  top: 45%;
   left: 50%;
-  width: 40%;
-  height: 10%;
-  background-color: black;
-  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50% 50% 0 0;
+  background-color: white;
   transform: translateX(-50%);
+  overflow: hidden;
 }
 
-.mouth::after {
+.mouth::before {
   content: "";
   position: absolute;
-  top: 50%;
-  right: 0;
-  width: 20%;
-  height: 50%;
-  background-color: black;
-  border-radius: 50% 50% 0 0;
-  transform: translateY(-50%);
+  top: 60%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #005cbf;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.teeth {
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  background-color: white;
+}
+
+.teeth.left {
+  left: 25%;
+  transform: rotate(15deg);
+}
+
+.teeth.right {
+  right: 25%;
+  transform: rotate(-15deg);
+}
+
+.teeth::before,
+.teeth::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.teeth::before {
+  transform: skewX(25deg);
+}
+
+.teeth::after {
+  transform: skewX(-25deg);
 }
